@@ -1,14 +1,16 @@
 <script>
 import MoviesList from "./MoviesList.vue";
+import SeriesList from "./SeriesList.vue";
 
 export default {
-  components: { MoviesList },
+  components: { MoviesList, SeriesList },
 };
 </script>
 
 <template>
   <div class="container">
     <MoviesList />
+    <SeriesList />
   </div>
 </template>
 

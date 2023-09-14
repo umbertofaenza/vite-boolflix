@@ -14,17 +14,26 @@ export default {
     return {
       store,
       moviesQueryURL: "",
+      seriesQueryURL: "",
     };
   },
 
   components: { AppHeader, AppMain },
 
   methods: {
-    fetchMoviesByQuery(searchedTerm) {
+    fetchResultsByQuery(searchedTerm) {
+      // movies
       this.moviesQueryURL = `https://api.themoviedb.org/3/search/movie?api_key=5c764612f10030f97b723e24778692e4&query=${searchedTerm}`;
 
       axios.get(this.moviesQueryURL).then((response) => {
         store.moviesData = response.data.results;
+      });
+
+      // tv series
+      this.seriesQueryURL = `https://api.themoviedb.org/3/search/tv?api_key=5c764612f10030f97b723e24778692e4&query=${searchedTerm}`;
+
+      axios.get(this.seriesQueryURL).then((response) => {
+        store.seriesData = response.data.results;
       });
     },
   },
@@ -34,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @search-submit="fetchMoviesByQuery" />
+  <AppHeader @search-submit="fetchResultsByQuery" />
   <AppMain />
 </template>
 

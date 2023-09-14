@@ -1,0 +1,24 @@
+<script>
+import { store } from "../data/store";
+
+import SerieCard from "./SerieCard.vue";
+
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+
+  components: { SerieCard },
+};
+</script>
+
+<template>
+  <div class="container">
+    <h3 v-if="this.store.seriesData.length > 0">Series:</h3>
+    <SerieCard v-for="serie in this.store.seriesData" :serieDetails="serie" />
+  </div>
+</template>
+
+<style lang="scss"></style>
