@@ -12,7 +12,10 @@ export default {
       <li>Title: {{ movieDetails.title }}</li>
       <li>Original Title: {{ movieDetails.original_title }}</li>
       <li>
-        <img :src="'/img/flags/' + movieDetails.original_language + '.png'" />
+        <img
+          :src="'/img/flags/' + movieDetails.original_language + '.png'"
+          :alt="'Language: ' + movieDetails.original_language"
+        />
       </li>
       <li>Vote: {{ movieDetails.vote_average }}</li>
     </ul>
