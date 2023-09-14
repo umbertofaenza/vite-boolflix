@@ -16,6 +16,7 @@ export default {
 
 <template>
   <div class="container">
+    <h3 v-if="this.store.moviesData.length > 0">Movies:</h3>
     <MovieCard v-for="movie in this.store.moviesData" :movieDetails="movie" />
   </div>
 </template>
