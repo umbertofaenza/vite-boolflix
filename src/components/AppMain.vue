@@ -8,9 +8,8 @@ export default {
 
 <template>
   <div class="container">
-    <h2>APP MAIN</h2>
+    <MoviesList />
   </div>
-  <MoviesList />
 </template>
 
 <style lang="scss"></style>

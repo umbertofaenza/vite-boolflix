@@ -1,16 +1,23 @@
 <script>
+import { store } from "../data/store";
+
 import MovieCard from "./MovieCard.vue";
 
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
+
   components: { MovieCard },
 };
 </script>
 
 <template>
   <div class="container">
-    <h4>MOVIES LIST</h4>
+    <MovieCard v-for="movie in this.store.moviesData" :movieDetails="movie" />
   </div>
-  <MovieCard />
 </template>
 
 <style lang="scss"></style>

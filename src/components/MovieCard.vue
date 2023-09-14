@@ -1,8 +1,19 @@
-<script></script>
+<script>
+export default {
+  props: {
+    movieDetails: Object,
+  },
+};
+</script>
 
 <template>
   <div class="container">
-    <h5>MOVIE CARD</h5>
+    <ul>
+      <li>Title: {{ movieDetails.title }}</li>
+      <li>Original Title: {{ movieDetails.original_title }}</li>
+      <li>Language: {{ movieDetails.original_language }}</li>
+      <li>Vote: {{ movieDetails.vote_average }}</li>
+    </ul>
   </div>
 </template>
 
