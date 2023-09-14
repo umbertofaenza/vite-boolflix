@@ -25,8 +25,6 @@ export default {
 
       axios.get(this.moviesQueryURL).then((response) => {
         store.moviesData = response.data.results;
-
-        console.log(response.data.results);
       });
     },
   },
