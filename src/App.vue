@@ -49,6 +49,6 @@ export default {
 
 <style lang="scss">
 img {
-  max-width: 200px;
+  max-width: 100%;
 }
 </style>

@@ -11,13 +11,16 @@ export default {
 </script>
 
 <template>
-  <div class="container mt-3">
-    <!-- search bar -->
-    <form
-      class="row g-3"
-      @submit.prevent="$emit('search-submit', searchedTerm)"
-    >
-      <div class="col-auto">
+  <header>
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <img src="img\netflix-logo.png" alt="Netflix Logo" />
+      </div>
+      <!-- search bar -->
+      <form
+        class="d-flex align-items-center"
+        @submit.prevent="$emit('search-submit', searchedTerm)"
+      >
         <!-- input -->
         <input
           type="text"
@@ -25,13 +28,25 @@ export default {
           placeholder="Enter a title..."
           v-model="searchedTerm"
         />
-      </div>
-      <div class="col-auto">
         <!-- button -->
-        <button type="submit" class="btn btn-primary mb-3">Search</button>
-      </div>
-    </form>
-  </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+header {
+  background-color: #1b1b1b;
+  padding: 1rem 0;
+
+  .logo img {
+    width: 150px;
+  }
+}
+
+.btn.btn-primary {
+  background-color: #e40813;
+  border: 1px solid #e40813;
+}
+</style>
