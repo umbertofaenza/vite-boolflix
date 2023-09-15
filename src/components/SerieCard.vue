@@ -21,12 +21,30 @@ export default {
           :alt="'Language: ' + serieDetails.original_language"
         />
       </li>
-      <li>Vote: {{ serieDetails.vote_average }}</li>
+      <li>
+        Rating:
+        <!-- full stars -->
+        <font-awesome-icon
+          v-for="i in Math.ceil(serieDetails.vote_average / 2)"
+          icon="fa-solid fa-star"
+          class="full-star"
+        />
+
+        <!-- empty stars -->
+        <font-awesome-icon
+          v-for="i in 5 - Math.ceil(serieDetails.vote_average / 2)"
+          icon="fa-regular fa-star"
+        />
+      </li>
     </ul>
   </div>
 </template>
 
 <style lang="scss">
+.full-star {
+  color: gold;
+}
+
 .flag {
   width: 50px;
 }
