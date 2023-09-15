@@ -9,10 +9,14 @@ export default {
 <template>
   <div class="container">
     <ul>
+      <img
+        :src="'https://image.tmdb.org/t/p/w342/' + serieDetails.poster_path"
+      />
       <li>Title: {{ serieDetails.name }}</li>
       <li>Original Title: {{ serieDetails.original_name }}</li>
       <li>
         <img
+          class="flag"
           :src="'/img/flags/' + serieDetails.original_language + '.png'"
           :alt="'Language: ' + serieDetails.original_language"
         />
@@ -23,7 +27,7 @@ export default {
 </template>
 
 <style lang="scss">
-img {
+.flag {
   width: 50px;
 }
 </style>

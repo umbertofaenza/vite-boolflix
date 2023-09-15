@@ -47,4 +47,8 @@ export default {
   <AppMain />
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+img {
+  max-width: 200px;
+}
+</style>
