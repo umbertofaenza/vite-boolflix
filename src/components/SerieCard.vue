@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <div class="col">
     <ul>
       <img
         :src="'https://image.tmdb.org/t/p/w342/' + serieDetails.poster_path"
