@@ -15,7 +15,12 @@ export default {
 </script>
 
 <template>
-  <h3 v-if="this.store.seriesData.length > 0">TV Series</h3>
+  <!-- title and results -->
+  <div v-if="this.store.seriesData.length > 0" class="results-title">
+    <h3>TV Series</h3>
+    <span>{{ this.store.seriesData.length }} result(s)</span>
+  </div>
+  <!-- cards row -->
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <SerieCard
       v-for="serie in this.store.seriesData"

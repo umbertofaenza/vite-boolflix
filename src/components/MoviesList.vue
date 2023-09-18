@@ -15,7 +15,10 @@ export default {
 </script>
 
 <template>
-  <h3 v-if="this.store.moviesData.length > 0">Movies</h3>
+  <div v-if="this.store.moviesData.length > 0" class="results-title">
+    <h3>Movies</h3>
+    <span>{{ this.store.moviesData.length }} result(s)</span>
+  </div>
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <MovieCard
       v-for="movie in this.store.moviesData"
@@ -25,4 +28,14 @@ export default {
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.results-title h3 {
+  margin-bottom: 0;
+}
+
+.results-title span {
+  display: inline-block;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+</style>
