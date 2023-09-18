@@ -8,44 +8,56 @@ export default {
 
 <template>
   <div class="col">
-    <ul>
-      <img
-        :src="'https://image.tmdb.org/t/p/w342/' + serieDetails.poster_path"
-      />
-      <li>Title: {{ serieDetails.name }}</li>
-      <li>Original Title: {{ serieDetails.original_name }}</li>
-      <li>
+    <!-- card -->
+    <div class="production-card">
+      <!-- poster -->
+      <div class="production-poster">
         <img
-          class="flag"
-          :src="'/img/flags/' + serieDetails.original_language + '.png'"
-          :alt="'Language: ' + serieDetails.original_language"
+          :src="'https://image.tmdb.org/t/p/w342/' + serieDetails.poster_path"
         />
-      </li>
-      <li>
-        Rating:
-        <!-- full stars -->
-        <font-awesome-icon
-          v-for="i in Math.ceil(serieDetails.vote_average / 2)"
-          icon="fa-solid fa-star"
-          class="full-star"
-        />
+      </div>
+      <!-- info -->
+      <div class="production-info">
+        <ul>
+          <!-- title -->
+          <li>
+            <span>Title: </span>
+            {{ serieDetails.name }}
+          </li>
+          <!-- original title -->
+          <li>
+            <span>Original title: </span>
+            {{ serieDetails.original_name }}
+          </li>
+          <!-- language (flag) -->
+          <li>
+            <span>Language: </span>
+            <img
+              class="flag"
+              :src="'/img/flags/' + serieDetails.original_language + '.png'"
+              :alt="'Language: ' + serieDetails.original_language"
+            />
+          </li>
+          <!-- rating -->
+          <li>
+            <span>Rating: </span>
+            <!-- full stars -->
+            <font-awesome-icon
+              v-for="i in Math.ceil(serieDetails.vote_average / 2)"
+              icon="fa-solid fa-star"
+              class="full-star"
+            />
 
-        <!-- empty stars -->
-        <font-awesome-icon
-          v-for="i in 5 - Math.ceil(serieDetails.vote_average / 2)"
-          icon="fa-regular fa-star"
-        />
-      </li>
-    </ul>
+            <!-- empty stars -->
+            <font-awesome-icon
+              v-for="i in 5 - Math.ceil(serieDetails.vote_average / 2)"
+              icon="fa-regular fa-star"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-.full-star {
-  color: gold;
-}
-
-.flag {
-  width: 50px;
-}
-</style>
+<style lang="scss"></style>
