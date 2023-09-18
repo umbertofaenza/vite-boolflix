@@ -3,6 +3,17 @@ export default {
   props: {
     serieDetails: Object,
   },
+
+  computed: {
+    showPoster() {
+      if (this.serieDetails.poster_path == null) {
+        return "/img/no-poster.png";
+      } else {
+        const posterUrl = `https://image.tmdb.org/t/p/w342/${this.serieDetails.poster_path}`;
+        return posterUrl;
+      }
+    },
+  },
 };
 </script>
 
@@ -12,9 +23,7 @@ export default {
     <div class="production-card">
       <!-- poster -->
       <div class="production-poster">
-        <img
-          :src="'https://image.tmdb.org/t/p/w342/' + serieDetails.poster_path"
-        />
+        <img :src="showPoster" />
       </div>
       <!-- info -->
       <div class="production-info">

@@ -46,6 +46,11 @@ main {
   }
 }
 
+.production-poster img {
+  width: 342px;
+  aspect-ratio: 1 / 1.5;
+}
+
 .production-info {
   padding: 10px;
 
