@@ -1,8 +1,15 @@
 <script>
+import { store } from "../data/store";
 import MoviesList from "./MoviesList.vue";
 import SeriesList from "./SeriesList.vue";
 
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
+
   components: { MoviesList, SeriesList },
 };
 </script>
@@ -10,6 +17,9 @@ export default {
 <template>
   <main>
     <div class="container">
+      <h3 v-if="store.moviesData.length == 0 && store.seriesData.length == 0">
+        Search for Movies and TV Series...
+      </h3>
       <MoviesList />
       <SeriesList />
     </div>
